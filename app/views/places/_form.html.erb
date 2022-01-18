@@ -1,0 +1,20 @@
+<%= form_with model: place, html: { class: 'flex flex-col', data: { action: "submit->modal#close" } } do |form| %>
+  <div class="flex flex-col">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="flex flex-col mt-4">
+    <%= form.label :zip_code %>
+    <%= form.number_field :zip_code %>
+  </div>
+  
+  <div class="flex flex-col mt-4">
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+  </div>
+
+  <div class="flex mt-4">
+    <%= form.submit class: 'px-2 py-1 bg-green-500 bg-opacity-75 rounded cursor-pointer' %>
+  </div>
+<% end %>

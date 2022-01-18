@@ -1,0 +1,13 @@
+<div class="w-full h-screen flex flex-col tw-gray-100">
+  <h1 class="text-4xl text-gray-50 font-semibold my-4"> All Places </h1>
+  
+  <%= turbo_stream_from :places %>
+  <turbo-frame id="places" class="grid grid-cols-2 gap-8">
+    <% @places.each do |place| %>
+      <%= render "place", place: place %>
+    <% end %>
+  </turbo-frame>
+
+  <%= link_to "Add new place", new_place_path, class: 'px-2 py-1 bg-pink-400 bg-opacity-75 rounded-full text-gray-50 mr-auto mt-4',
+      data: { turbo_frame: 'modal' } %>
+</div>

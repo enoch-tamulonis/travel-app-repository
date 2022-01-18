@@ -1,0 +1,7 @@
+<a href="<%= edit_place_path(place) %>" class="bg-gray-200 h-96 w-full flex flex-col items-center justify-center group relative"
+   data-turbo-frame="modal" id="<%= dom_id(place) %>">
+  <%= image_tag url_for(place.image), class: 'h-96 w-full object-cover' if place.image.attached? %>
+  <div class="w-3/4 mx-auto py-2 group-hover:bg-gray-800 flex justify-center transition duration-300 absolute">
+    <h3 class="text-gray-800 group-hover:text-gray-50 transition duration-300"> <%= place.name %> </h3>
+  </div>
+</a>
